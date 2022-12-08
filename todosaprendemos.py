@@ -131,3 +131,5 @@ gui.mainloop()
     B6=Button(gui,text="Ingresar", command=ingresarEncuesta)
     B6.place(x=160, y=320, width=70, height=30)'''
 
+
+auxiliooooo
