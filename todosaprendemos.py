@@ -86,7 +86,8 @@ def programas():
     labelTdsof=Label(frameLabels1,text="TECNOLOGÍA EN DESARROLLO DE SOFTWARE").grid(row=1,column=1)
     labelFono=Label(frameLabels2,text="\n FONOAUDIOLOGÍA").grid(row=1,column=50)
     labelTdsof2=Label(frameLabels1,text="SEMESTRES: 6 \n ASIGNATURAS: Matemáticas, programación, ingles").grid(row=3,column=1)
-    #photo1=PhotoImage(file=".gif") # colocar imagen
+    photo1=PhotoImage(file="pensumfono.gif") # colocar imagen
+    labelfono=Label(gui,image=photo1)
     labelFono2=Label(frameLabels2,text="SEMESTRES: 10 \n ASIGNATURAS: Matematicas, Ingles,Biologia").grid(row=3,column=50)
     #photo2=PhotoImage(file=".gif") #colocar imagen
     B6=Button(gui,text="Menú Principal", command=menu1)
@@ -94,6 +95,7 @@ def programas():
     frameLabels1.place(x=20, y=80, width=1300, height=600)
     frameLabels2.place(x=480, y=70, width=1300, height=600)
     gui.update()
+    labelfono.pack()
 
 def EstudiantesFono():
     labelBorrar=Label(gui,text="")
