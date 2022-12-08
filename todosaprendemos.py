@@ -1,4 +1,5 @@
 from tkinter import *
+
 """gui=Tk()
 gui.title("Práctica ")
 gui.geometry("400x400")
@@ -81,28 +82,42 @@ def ingresarEncuesta():
 def programas():
     labelBorrar=Label(gui,text="")
     labelBorrar.place(x=0, y=0, width=800, height=800)
+
+    
     frameLabels1=Frame(gui)
-    frameLabels2=Frame(gui)
     labelTdsof=Label(frameLabels1,text="TECNOLOGÍA EN DESARROLLO DE SOFTWARE").grid(row=1,column=1)
-    labelFono=Label(frameLabels2,text="\n FONOAUDIOLOGÍA").grid(row=1,column=50)
-    labelTdsof2=Label(frameLabels1,text="SEMESTRES: 6 \n ASIGNATURAS: Matemáticas, programación, ingles").grid(row=3,column=1)
-    photo1=PhotoImage(file="pensumfono.gif") # colocar imagen
-    labelfono=Label(gui,image=photo1)
-    labelFono2=Label(frameLabels2,text="SEMESTRES: 10 \n ASIGNATURAS: Matematicas, Ingles,Biologia").grid(row=3,column=50)
-    #photo2=PhotoImage(file=".gif") #colocar imagen
-    B6=Button(gui,text="Menú Principal", command=menu1)
-    B6.place(x=300, y=320, width=100, height=50,)
     frameLabels1.place(x=20, y=80, width=1300, height=600)
-    frameLabels2.place(x=480, y=70, width=1300, height=600)
+
+    frameLabels2=Frame(gui)
+    labelFono=Label(frameLabels2,text="\n FONOAUDIOLOGÍA").grid(row=1,column=50)
+    frameLabels2.place(x=500, y=70, width=1300, height=600)
+
+    #labelTdsof2=Label(frameLabels1,text="SEMESTRES: 6 \n ASIGNATURAS: Matemáticas, programación, ingles").grid(row=3,column=1)
+
+    frameImagesFono = Frame(gui)
+    #frameImagesFono.pack(side=TOP, fill="x")
+    frameImagesFono.picture = PhotoImage(file="pensumfono.png") # colocar imagen
+    frameImagesFono.label=Label(frameImagesFono,image=frameImagesFono.picture)
+    frameImagesFono.label.pack()
+    frameImagesFono.place(x=420, y=120,width=281, height=435)
+
+    frameImagesTede = Frame(gui)
+    #frameImagesTede.pack(side=RIGHT, fill="x")
+    frameImagesTede.picture = PhotoImage(file="pensumtdsof.gif") # colocar imagen
+    frameImagesTede.label=Label(frameImagesTede,image=frameImagesTede.picture)
+    frameImagesTede.label.pack()
+    frameImagesTede.place(x=50, y=120,width=297, height=435)
+
+
+    #labelFono2=Label(frameLabels2,text="SEMESTRES: 10 \n ASIGNATURAS: Matematicas, Ingles,Biologia").grid(row=3,column=50)
+    #photo2=PhotoImage(file=".gif") #colocar imagen
+   
+    B6=Button(gui,text="Menú Principal", command=menu1)
+    B6.place(x=300, y=600, width=100, height=50,)
+    
+    
     gui.update()
-    labelfono.pack()
 
-def EstudiantesFono():
-    labelBorrar=Label(gui,text="")
-    labelBorrar.place(x=0, y=0, width=800, height=800)
-    
-
-    
 menu1()
 gui.mainloop()
 
