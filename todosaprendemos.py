@@ -106,3 +106,8 @@ gui.mainloop()
     textActividad.place(x=280, y=200, width=150, height=80)
     B6=Button(gui,text="Ingresar", command=ingresarEncuesta)
     B6.place(x=160, y=320, width=70, height=30)'''
+
+
+
+
+    HOLA MUNDO CON ERRORES
