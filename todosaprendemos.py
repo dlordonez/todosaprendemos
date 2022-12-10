@@ -15,7 +15,7 @@ def menu1():
     frameBotones=Frame(gui)
     B1=Button(frameBotones,text="Programas",command=programas).grid(row=0,column=0)
     B2=Button(frameBotones,text="Estudiantes \n Fonoaudiologia", command=EstudiantesFono).grid(row=0,column=1)
-    B3=Button(frameBotones,text="Estudiantes\n Tedesoft").grid(row=0,column=2)
+    B3=Button(frameBotones,text="Estudiantes\n Tedesoft", command=EstudiantesTedesof).grid(row=0,column=2)
     B4=Button(frameBotones,text="Reportes").grid(row=0,column=3)
     B5=Button(frameBotones,text="Mejores \n Estudiantes",command=menu2).grid(row=0,column=4)
     frameBotones.place(x=60, y=20, width=600, height=40)
@@ -62,8 +62,8 @@ def ingresar():
     textNota1=Entry(gui)
     textNota1.place(x=450, y=300, width=250, height=40)
 
-    B6=Button(gui,text="Ingresar", command=ingresarEncuesta)
-    B6.place(x=160, y=320, width=70, height=30)
+    B6=Button(gui,text="Ingresar", command=ingresar)
+    B6.place(x=160, y=380, width=70, height=30)
 
 
     
@@ -112,16 +112,27 @@ def EstudiantesFono():
     labelBorrar=Label(gui,text="")
     labelBorrar.place(x=0, y=0, width=800, height=800)
     frameBotones2=Frame(gui)
-    agregar=Button(frameBotones2,text="Agregar", command=ingresar).grid(row=0,column=0)
+    agregar=Button(frameBotones2,text="Ingresar", command=ingresar).grid(row=0,column=0)
     editar=Button(frameBotones2,text="Editar").grid(row=0,column=1)
     eliminar=Button(frameBotones2,text="Eliminar").grid(row=0,column=2)
     volver=Button(frameBotones2,text="Volver", command=menu1).grid(row=0,column=3)
-    frameBotones2.place(x=300, y=600, width=200, height=120)
+    frameBotones2.place(x=250, y=600, width=300, height=120)
     gui.update()
 
+def EstudiantesTedesof():
+    labelBorrar=Label(gui,text="")
+    labelBorrar.place(x=0, y=0, width=800, height=800)
+    frameBotones2=Frame(gui)
+    agregar=Button(frameBotones2,text="Ingresar", command=ingresar).grid(row=0,column=0)
+    editar=Button(frameBotones2,text="Editar").grid(row=0,column=1)
+    eliminar=Button(frameBotones2,text="Eliminar").grid(row=0,column=2)
+    volver=Button(frameBotones2,text="Volver", command=menu1).grid(row=0,column=3)
+    frameBotones2.place(x=250, y=600, width=300, height=120)
+    gui.update()
 
     
-
+def archivosTxt():('datos.txt')
+  
     
 menu1()
 gui.mainloop()
