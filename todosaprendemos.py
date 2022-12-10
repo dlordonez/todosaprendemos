@@ -22,17 +22,7 @@ def menu1():
     gui.update()
 #actualiza la interfaz grafica gui.update
 
-def menu2():
-    labelBorrar=Label(gui,text="")
-    labelBorrar.place(x=60, y=80, width=400, height=300)
-    frameBotones2=Frame(gui)
-    B12=Button(frameBotones2,text="Programas").grid(row=0,column=0)
-    B22=Button(frameBotones2,text="Estudiantes \n Fonoaudiologia").grid(row=0,column=1)
-    B32=Button(frameBotones2,text="Estudiantes \n Tedesoft").grid(row=0,column=2)
-    B42=Button(frameBotones2,text="Reportes").grid(row=0,column=3)
-    B52=Button(frameBotones2,text="Mejores \n Estudiantes", command=menu1).grid(row=0,column=4)
-    frameBotones2.place(x=60, y=20, width=400, height=25)
-    gui.update()
+
 
 def error():
     labelBorrar=Label(gui,text="")
@@ -46,24 +36,26 @@ def ingresar():
     labelBorrar.place(x=0, y=0, width=800, height=800)
 
     labelCodigo=Label(gui,text="Ingrese el código del estudiante")
-    labelCodigo.place(x=150, y=80, width=200, height=40)
+    labelCodigo.place(x=150, y=30, width=200, height=40)
     textCodigo=Entry(gui)
-    textCodigo.place(x=450, y=80, width=250, height=40)
+    textCodigo.place(x=450, y=150, width=250, height=30)
     labelNombre=Label(gui,text="Ingrese nombre del estudiante")
-    labelNombre.place(x=150, y=150, width=200, height=40)
+    labelNombre.place(x=150, y=40, width=200, height=40)
     textNombre=Entry(gui)
-    textNombre.place(x=450, y=150, width=250, height=40)
+    textNombre.place(x=450, y=200, width=250, height=30)
     labelMateria=Label(gui,text="Ingrese nombre de la materia")
-    labelMateria.place(x=150, y=250, width=200, height=40)
+    labelMateria.place(x=150, y=60, width=200, height=40)
     textMateria=Entry(gui)
-    textMateria.place(x=450, y=250, width=250, height=40)
+    textMateria.place(x=450, y=250, width=250, height=30)
     labelNota1=Label(gui,text="Ingrese nota 1 de la materia: "+ str(textMateria))
-    labelNota1.place(x=150, y=300, width=200, height=40)
+    labelNota1.place(x=150, y=80, width=200, height=40)
     textNota1=Entry(gui)
-    textNota1.place(x=450, y=300, width=250, height=40)
+    textNota1.place(x=450, y=300, width=250, height=30)
 
     B6=Button(gui,text="Ingresar", command=ingresar)
     B6.place(x=160, y=380, width=70, height=30)
+    B7=Button(gui,text="Menú Principal", command=menu1)
+    B7.place(x=300, y=600, width=100, height=50,)
 
 
     
@@ -102,13 +94,13 @@ def programas():
     #labelFono2=Label(frameLabels2,text="SEMESTRES: 10 \n ASIGNATURAS: Matematicas, Ingles,Biologia").grid(row=3,column=50)
     #photo2=PhotoImage(file=".gif") #colocar imagen
    
-    B6=Button(gui,text="Menú Principal", command=menu1)
-    B6.place(x=300, y=600, width=100, height=50,)
+    B8=Button(gui,text="Menú Principal", command=menu1)
+    B8.place(x=300, y=600, width=100, height=50,)
     
     
     gui.update()
 
-def EstudiantesFono():
+def EstudiantesFono(): #funcion que sirve para mostrar los estudiantes que estan matriculados en la carrera
     labelBorrar=Label(gui,text="")
     labelBorrar.place(x=0, y=0, width=800, height=800)
     frameBotones2=Frame(gui)
@@ -130,7 +122,8 @@ def EstudiantesTedesof():
     frameBotones2.place(x=250, y=600, width=300, height=120)
     gui.update()
 
-    
+def Reportes():
+
 def archivosTxt():('datos.txt')
   
     
