@@ -39,6 +39,8 @@ def error():
     errorLabel = Label(text="Error en el ingreso de los datos", bg="red")
     errorLabel.place(x=60, y=80, width=250, height=80)
     gui.update()
+
+#cambioej    
     
 
 
