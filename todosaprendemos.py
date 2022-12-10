@@ -17,7 +17,7 @@ def menu1():
     B2=Button(frameBotones,text="Estudiantes \n Fonoaudiologia", command=EstudiantesFono).grid(row=0,column=1)
     B3=Button(frameBotones,text="Estudiantes\n Tedesoft", command=EstudiantesTedesof).grid(row=0,column=2)
     B4=Button(frameBotones,text="Reportes").grid(row=0,column=3)
-    B5=Button(frameBotones,text="Mejores \n Estudiantes",command=menu2).grid(row=0,column=4)
+    B5=Button(frameBotones,text="Mejores \n Estudiantes",command=menu1).grid(row=0,column=4)
     frameBotones.place(x=60, y=20, width=600, height=40)
     gui.update()
 #actualiza la interfaz grafica gui.update
@@ -31,7 +31,7 @@ def error():
     errorLabel.place(x=60, y=80, width=250, height=80)
     gui.update()
 
-def ingresar():
+def ingresarTdesof():
     labelBorrar=Label(gui,text="")
     labelBorrar.place(x=0, y=0, width=800, height=800)
 
@@ -137,9 +137,9 @@ def EstudiantesTedesof():
 
 
 
-def Reportes():
+#def Reportes():
 
-def archivosTxt():('datos.txt')
+#def archivosTxt():('datos.txt')
   
     
 menu1()
