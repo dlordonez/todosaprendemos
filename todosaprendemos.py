@@ -5,8 +5,9 @@ from tkinter import *
 gui=Tk()
 gui.title(" INSTITUCIÓN EDUCATIVA TODOS APRENDEMOS")
 gui.geometry("800x680")
-textActividad=Entry(gui)
-textTiempo=Entry(gui)
+textCodigo=Entry(gui)
+textNombre=Entry(gui)
+
 # frame es un espacio dentro del gui para ubicar un elemento
 def menu1():
     labelBorrar=Label(gui,text="")
@@ -39,9 +40,57 @@ def error():
     errorLabel = Label(text="Error en el ingreso de los datos", bg="red")
     errorLabel.place(x=60, y=80, width=250, height=80)
     gui.update()
+
+def ingresar():
+    labelBorrar=Label(gui,text="")
+    labelBorrar.place(x=0, y=0, width=800, height=800)
+
+    labelCodigo=Label(gui,text="Ingrese el código del estudiante")
+    labelCodigo.place(x=150, y=80, width=200, height=40)
+    textCodigo=Entry(gui)
+    textCodigo.place(x=450, y=80, width=250, height=40)
+    labelNombre=Label(gui,text="Ingrese nombre del estudiante")
+    labelNombre.place(x=150, y=150, width=200, height=40)
+    textNombre=Entry(gui)
+    textNombre.place(x=450, y=150, width=250, height=40)
+    labelMateria=Label(gui,text="Ingrese nombre de la materia")
+    labelMateria.place(x=150, y=250, width=200, height=40)
+    textMateria=Entry(gui)
+    textMateria.place(x=450, y=250, width=250, height=40)
+    labelNota1=Label(gui,text="Ingrese nota 1 de la materia: "+ str(textMateria))
+    labelNota1.place(x=150, y=300, width=200, height=40)
+    textNota1=Entry(gui)
+    textNota1.place(x=450, y=300, width=250, height=40)
+
+    B6=Button(gui,text="Ingresar", command=ingresarEncuesta)
+    B6.place(x=160, y=320, width=70, height=30)
+
     
-
-
+def updateEncuesta(nuevalinea):
+    print("Actualizando encuesta")
+    arrayLineas=[]
+# enconding manejar caracteres especiales utf-8 es sintaxis
+# [:-1:] quita el salto de linea
+    with open("ANALISIS.txt", "r", encoding="utf-8") as f:
+        for linea in f:
+            arrayLineas.append(linea[:-1:])
+    f.close()
+    f=open("ANALISIS.txt", "w", encoding="utf-8")
+    for j in arrayLineas:
+        f.write(j+"\n")
+    f.write(nuevalinea+"\n")
+    f.close()
+    
+def ingresarEncuesta():
+    actividad=int(textActividad.get())
+    tiempo=int(textTiempo.get())
+    print("Se ingresaran datos")
+    print("Tiempo", tiempo)
+    print("Actividad", actividad)
+    if tiempo > 0 and tiempo <5 and actividad >0 and actividad < 6:
+        updateEncuesta(str(tiempo)+","+str(actividad)+",")
+    else:
+        error()
     
 #labelBorrar, sobreescribe, pone una página nueva sobre el gui hay que crear un campo para ingresar texto
     
@@ -88,7 +137,7 @@ def EstudiantesFono():
     labelBorrar=Label(gui,text="")
     labelBorrar.place(x=0, y=0, width=800, height=800)
     frameBotones2=Frame(gui)
-    agregar=Button(frameBotones2,text="Agregar").grid(row=0,column=0)
+    agregar=Button(frameBotones2,text="Agregar", command=ingresar).grid(row=0,column=0)
     editar=Button(frameBotones2,text="Editar").grid(row=0,column=1)
     eliminar=Button(frameBotones2,text="Eliminar").grid(row=0,column=2)
     volver=Button(frameBotones2,text="Volver", command=menu1).grid(row=0,column=3)
@@ -101,4 +150,21 @@ def EstudiantesFono():
     
 menu1()
 gui.mainloop()
+
+'''def programas():
+    global textActividad
+    global textTiempo
+    labelBorrar=Label(gui,text="")
+    labelBorrar.place(x=60, y=80, width=400, height=260)
+    labelTiempo=Label(gui,text="Tiempo libre \n <1> Menos de 3 horas \n <2> Entre 3 y 6 horas\n <3> Entre 6 y 9 horas \n <4> Más de 9 horas")
+    labelTiempo.place(x=100, y=80, width=150, height=80)
+    textTiempo=Entry(gui)
+    textTiempo.place(x=280, y=80, width=150, height=80)
+    labelActividad=Label(gui,text="Actividad principal \n <1> Leer \n <2> Ver televisión \n <3> Hacer deporte \n <4> Dormir \n <5> Otra")
+    labelActividad.place(x=100, y=200, width=150, height=100)
+    textActividad=Entry(gui)
+    textActividad.place(x=280, y=200, width=150, height=80)
+    B6=Button(gui,text="Ingresar", command=ingresarEncuesta)
+    B6.place(x=160, y=320, width=70, height=30)'''
+
 
