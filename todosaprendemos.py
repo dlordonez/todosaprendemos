@@ -46,23 +46,23 @@ def ingresar():
     labelBorrar.place(x=0, y=0, width=800, height=800)
 
     labelCodigo=Label(gui,text="Ingrese el código del estudiante")
-    labelCodigo.place(x=150, y=80, width=200, height=40)
+    labelCodigo.place(x=150, y=20, width=200, height=40)
     textCodigo=Entry(gui)
     textCodigo.place(x=450, y=80, width=250, height=40)
     labelNombre=Label(gui,text="Ingrese nombre del estudiante")
-    labelNombre.place(x=150, y=150, width=200, height=40)
+    labelNombre.place(x=150, y=50, width=200, height=40)
     textNombre=Entry(gui)
     textNombre.place(x=450, y=150, width=250, height=40)
     labelMateria=Label(gui,text="Ingrese nombre de la materia")
-    labelMateria.place(x=150, y=250, width=200, height=40)
+    labelMateria.place(x=150, y=80, width=200, height=40)
     textMateria=Entry(gui)
     textMateria.place(x=450, y=250, width=250, height=40)
     labelNota1=Label(gui,text="Ingrese nota 1 de la materia: "+ str(textMateria))
-    labelNota1.place(x=150, y=300, width=200, height=40)
+    labelNota1.place(x=150, y=110, width=200, height=40)
     textNota1=Entry(gui)
     textNota1.place(x=450, y=300, width=250, height=40)
     labelPorcentaje1=Label(gui,text="Ingrese porcentaje de nota 1: "+ str(textMateria))
-    labelPorcentaje1.place(x=150, y=300, width=200, height=40)
+    labelPorcentaje1.place(x=150, y=140, width=200, height=40)
     textPorcentaje1=Entry(gui)
     textPorcentaje.place(x=450, y=300, width=250, height=40)
     labelNota2=Label(gui,text="Ingrese nota 2 de la materia: "+ str(textMateria))
@@ -124,12 +124,15 @@ def EstudiantesFono():
     labelBorrar=Label(gui,text="")
     labelBorrar.place(x=0, y=0, width=800, height=800)
     frameBotones2=Frame(gui)
-    agregar=Button(frameBotones2,text="Agregar", command=ingresar).grid(row=0,column=0)
+    agregar=Button(frameBotones2,text="Ingresar", command=ingresar).grid(row=0,column=0)
     editar=Button(frameBotones2,text="Editar").grid(row=0,column=1)
     eliminar=Button(frameBotones2,text="Eliminar").grid(row=0,column=2)
     volver=Button(frameBotones2,text="Volver", command=menu1).grid(row=0,column=3)
     frameBotones2.place(x=300, y=600, width=200, height=120)
     gui.update()
+
+
+
 
 
     
