@@ -22,17 +22,7 @@ def menu1():
     gui.update()
 #actualiza la interfaz grafica gui.update
 
-def menu2():
-    labelBorrar=Label(gui,text="")
-    labelBorrar.place(x=60, y=80, width=400, height=300)
-    frameBotones2=Frame(gui)
-    B12=Button(frameBotones2,text="Programas").grid(row=0,column=0)
-    B22=Button(frameBotones2,text="Estudiantes \n Fonoaudiologia").grid(row=0,column=1)
-    B32=Button(frameBotones2,text="Estudiantes \n Tedesoft").grid(row=0,column=2)
-    B42=Button(frameBotones2,text="Reportes").grid(row=0,column=3)
-    B52=Button(frameBotones2,text="Mejores \n Estudiantes", command=menu1).grid(row=0,column=4)
-    frameBotones2.place(x=60, y=20, width=400, height=25)
-    gui.update()
+
 
 def error():
     labelBorrar=Label(gui,text="")
@@ -76,6 +66,8 @@ def ingresar():
 
     B6=Button(gui,text="Ingresar", command=ingresar)
     B6.place(x=160, y=380, width=70, height=30)
+    B7=Button(gui,text="Menú Principal", command=menu1)
+    B7.place(x=300, y=600, width=100, height=50,)
 
 
     
@@ -114,13 +106,13 @@ def programas():
     #labelFono2=Label(frameLabels2,text="SEMESTRES: 10 \n ASIGNATURAS: Matematicas, Ingles,Biologia").grid(row=3,column=50)
     #photo2=PhotoImage(file=".gif") #colocar imagen
    
-    B6=Button(gui,text="Menú Principal", command=menu1)
-    B6.place(x=300, y=600, width=100, height=50,)
+    B8=Button(gui,text="Menú Principal", command=menu1)
+    B8.place(x=300, y=600, width=100, height=50,)
     
     
     gui.update()
 
-def EstudiantesFono():
+def EstudiantesFono(): #funcion que sirve para mostrar los estudiantes que estan matriculados en la carrera
     labelBorrar=Label(gui,text="")
     labelBorrar.place(x=0, y=0, width=800, height=800)
     frameBotones2=Frame(gui)
@@ -145,7 +137,8 @@ def EstudiantesTedesof():
 
 
 
-    
+def Reportes():
+
 def archivosTxt():('datos.txt')
   
     
