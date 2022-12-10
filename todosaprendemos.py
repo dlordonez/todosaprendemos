@@ -5,8 +5,9 @@ from tkinter import *
 gui=Tk()
 gui.title(" INSTITUCIÓN EDUCATIVA TODOS APRENDEMOS")
 gui.geometry("800x680")
-textActividad=Entry(gui)
-textTiempo=Entry(gui)
+textCodigo=Entry(gui)
+textNombre=Entry(gui)
+
 # frame es un espacio dentro del gui para ubicar un elemento
 def menu1():
     labelBorrar=Label(gui,text="")
@@ -40,8 +41,29 @@ def error():
     errorLabel.place(x=60, y=80, width=250, height=80)
     gui.update()
 
-#cambioej    
-    
+def ingresar():
+    labelBorrar=Label(gui,text="")
+    labelBorrar.place(x=0, y=0, width=800, height=800)
+
+    labelCodigo=Label(gui,text="Ingrese el código del estudiante")
+    labelCodigo.place(x=150, y=80, width=200, height=40)
+    textCodigo=Entry(gui)
+    textCodigo.place(x=450, y=80, width=250, height=40)
+    labelNombre=Label(gui,text="Ingrese nombre del estudiante")
+    labelNombre.place(x=150, y=150, width=200, height=40)
+    textNombre=Entry(gui)
+    textNombre.place(x=450, y=150, width=250, height=40)
+    labelMateria=Label(gui,text="Ingrese nombre de la materia")
+    labelMateria.place(x=150, y=250, width=200, height=40)
+    textMateria=Entry(gui)
+    textMateria.place(x=450, y=250, width=250, height=40)
+    labelNota1=Label(gui,text="Ingrese nota 1 de la materia: "+ str(textMateria))
+    labelNota1.place(x=150, y=300, width=200, height=40)
+    textNota1=Entry(gui)
+    textNota1.place(x=450, y=300, width=250, height=40)
+
+    B6=Button(gui,text="Ingresar", command=ingresarEncuesta)
+    B6.place(x=160, y=320, width=70, height=30)
 
 
     
@@ -90,7 +112,7 @@ def EstudiantesFono():
     labelBorrar=Label(gui,text="")
     labelBorrar.place(x=0, y=0, width=800, height=800)
     frameBotones2=Frame(gui)
-    agregar=Button(frameBotones2,text="Agregar").grid(row=0,column=0)
+    agregar=Button(frameBotones2,text="Agregar", command=ingresar).grid(row=0,column=0)
     editar=Button(frameBotones2,text="Editar").grid(row=0,column=1)
     eliminar=Button(frameBotones2,text="Eliminar").grid(row=0,column=2)
     volver=Button(frameBotones2,text="Volver", command=menu1).grid(row=0,column=3)
@@ -103,4 +125,7 @@ def EstudiantesFono():
     
 menu1()
 gui.mainloop()
+
+
+
 
